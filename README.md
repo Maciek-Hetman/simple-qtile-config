@@ -24,7 +24,8 @@ should crear dmenu cache.
 They are mostly default, switching between windows is now mod + m 
 instead mod + space, and you can launch nautilus with mod + f (of course 
 you change nautilus to your preffered file manager), mod + return now
-launches alacritty. Mod key remains default(mod4/windows key).
+launches alacritty, mod + p to take area screenshot to 
+~/Screenshots/screenshot.png. Mod key remains default(mod4/windows key).
 
 ## Installation ##
 Clone this repository to ~/.config/qtile/ and restart qtile. 
@@ -33,5 +34,6 @@ Clone this repository to ~/.config/qtile/ and restart qtile.
 You need to have installed dmenu, qtile, python, python-pip, 
 alacritty (or another terminal emulator, but change it in config.py before 
 launching qtile), nautilus (or another file manager, you can change it in 
-config.py file), alsa-utils (for volume widget, contains amixer)
+config.py file), alsa-utils (for volume widget, contains amixer), 
+gnome-screenshot
 Also run pip install psutil to make Net widget work.
