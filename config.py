@@ -182,8 +182,6 @@ screens = [
 
 		widget.Spacer(length=4, background='#f01d0a'),
 
-		widget.Systray(),
-
             ],
             18,
         ),
