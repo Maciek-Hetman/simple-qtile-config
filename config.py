@@ -40,7 +40,7 @@ terminal = "alacritty"
 
 keys = [
     #Take screenshot
-    Key([mod], "p", lazy.spawn("gnome-screenshot -a -f ~/Screenshots/screenshot.png"), desc="Take screenshot"),
+    Key([mod], "p", lazy.spawn("gnome-screenshot -i"), desc="Take screenshot"),
 
     #Launch nautilus
     Key([mod], "f", lazy.spawn("nautilus"), desc="Launch file manager"),

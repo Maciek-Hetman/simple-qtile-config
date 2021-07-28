@@ -24,8 +24,7 @@ should crear dmenu cache.
 They are mostly default, switching between windows is now mod + m 
 instead mod + space, and you can launch nautilus with mod + f (of course 
 you change nautilus to your preffered file manager), mod + return now
-launches alacritty, mod + p to take area screenshot to 
-~/Screenshots/screenshot.png. Mod key remains default(mod4/windows key).
+launches alacritty, mod + p to take screenshot. Mod key remains default(mod4/windows key).
 
 ## Installation ##
 Clone this repository to ~/.config/qtile/ and restart qtile. 
