@@ -45,7 +45,6 @@ keys = [
     #Launch nautilus
     Key([mod], "f", lazy.spawn("nautilus"), desc="Launch file manager"),
 
-
     #Launch drun
     Key([mod], 'space', lazy.spawn("dmenu_run")),
 
@@ -166,13 +165,13 @@ screens = [
 		widget.Volume(background='#0e18a1'),
 
 		widget.Spacer(length=4, background='#0e18a1'),
-		widget.Spacer(length=4, background='#0a8fa1'),		
+		widget.Spacer(length=4, background='#0a8fa1'),
 
 		widget.Battery(format='{char} {percent:2.0%}', background='#0a8fa1'),
-		
+
 		widget.Spacer(length=4, background='#0a8fa1'),
 		widget.Spacer(length=4, background='#0e18a1'),
-                
+
                 widget.Clock(format='%a %I:%M %p', background='#0e18a1'),
 
 		widget.Spacer(length=4, background='#0e18a1'),
