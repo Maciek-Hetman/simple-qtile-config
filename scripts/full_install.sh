@@ -19,13 +19,11 @@ echo "Installing dependencies"
 sudo pacman -S python python-pip qtile dmenu alacritty nautilus alsa-utils gnome-screenshot xorg xorg-server nitrogen
 
 echo "Placing config files"
+cd ..
 rm -rf ~/.config/qtile/
 mkdir ~/.config/qtile/
 cp config.py ~/.config/qtile/config.py
 cp autostart.sh ~/.config/qtile/autostart.sh
-
-echo "Setting wallpaper"
-nitrogen john-towner-JgOeRuGD_Y4-unsplash.jpg
 
 echo "Installing psutil"
 pip install psutil
@@ -39,10 +37,13 @@ cd yay
 makepkg -si
 
 echo "Installing firefox"
-pacman -S firefox
+sudo pacman -S firefox
 
 echo "Installing remaining packages"
-pacman -S atom unzip geany networkmanager neofetch fish
+sudo pacman -S atom unzip geany networkmanager neofetch fish
+
+echo "Setting wallpaper"
+nitrogen john-towner-JgOeRuGD_Y4-unsplash.jpg
 
 echo "Rebooting..."
 sleep 2
