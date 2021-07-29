@@ -41,18 +41,18 @@ are only for Arch based distros.
 ## Usage ##
 
 ### Install only config ###
-Log in to qtile
-Hit <kbd>Win</kbd>+<kbd>Enter</kbd> to enter terminal
-Clone this repo
+Log in to qtile  
+Hit <kbd>Win</kbd>+<kbd>Enter</kbd> to enter terminal  
+Clone this repo  
 ```console
 ~$ git clone https://github.com/Maciek-Hetman/simple-qtile-config.git
 ~$ ./simple-qtile-config/scripts/first_boot.sh
 ```
-Pick wallpaper in nitrogen
-Choose zoomed fill option and apply
-Hit <kbd>Win</kbd>+<kbd>W</kbd> to quit nitrogen
-Hit <kbd>Ctrl</kbd>+<kbd>Win</kbd>+<kbd>R</kbd> to restart qtile
-Done
+Pick wallpaper in nitrogen  
+Choose zoomed fill option and apply  
+Hit <kbd>Win</kbd>+<kbd>W</kbd> to quit nitrogen  
+Hit <kbd>Ctrl</kbd>+<kbd>Win</kbd>+<kbd>R</kbd> to restart qtile  
+Done  
 
 ### Install config and dependencies ###
 Open terminal  
