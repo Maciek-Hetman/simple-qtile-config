@@ -7,5 +7,4 @@ mkdir ~/.config/fish/functions
 cp ~/simple-qtile-config/FishConfigs/fish_greeting.fish ~/.config/fish/functions/fish_greeting.fish
 
 echo "Installing omf"
-curl -L https://get.oh-my.fish
-omf install zish
+curl -L https://get.oh-my.fish | fish
