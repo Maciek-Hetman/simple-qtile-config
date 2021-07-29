@@ -29,8 +29,18 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 
-echo "Installing firefox"
-sudo pacman -S firefox
-
 echo "Installing remaining packages"
-sudo pacman -S atom unzip geany networkmanager neofetch fish
+sudo pacman -S atom unzip geany networkmanager neofetch fish htop firefox
+
+echo "Setting fish as default shell..."
+chsh -s `which fish`
+
+echo "Removing fish_greeting"
+rm -rf ~/.config/fish/config.fish
+cp ~/simple-qtile-config/FishConfigs/config.fish ~/.config/fish/config.fish
+mkdir ~/.config/fish/functions
+cp ~/simple-qtile-config/FishConfigs/fish_greeting.fish ~/.config/fish/functions/fish_greeting.fish
+
+echo "Installing omf"
+curl -L https://get.oh-my.fish | fish
+omf install lambda
