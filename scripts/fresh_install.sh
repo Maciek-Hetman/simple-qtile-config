@@ -19,7 +19,3 @@ sudo pacman -S python python-pip qtile dmenu alacritty nautilus alsa-utils gnome
 
 echo "Installing psutil"
 sudo pip install psutil
-
-echo "Rebooting..."
-sleep 2
-reboot

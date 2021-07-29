@@ -34,7 +34,3 @@ sudo pacman -S firefox
 
 echo "Installing remaining packages"
 sudo pacman -S atom unzip geany networkmanager neofetch fish
-
-echo "Rebooting..."
-sleep 3
-reboot
