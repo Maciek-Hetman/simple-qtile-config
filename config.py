@@ -35,18 +35,31 @@ from libqtile import qtile, hook, extension
 import os
 import subprocess
 
+#default mod key
 mod = "mod4"
+
+#default programs
 terminal = "alacritty"
+file_manager = "thunar"
+screenshot_exec = "gnome-screenshot -i"
+launcher = "dmenu_run"
+
+#widget colors
+color1 = '#0e18a1'
+color2 = '#0a8fa1'
+color3 = '#f01d0a'      #QuickExit color
+
+widget_font = 'Ubuntu'
 
 keys = [
     #Take screenshot
-    Key([mod], "p", lazy.spawn("gnome-screenshot -i"), desc="Take screenshot"),
+    Key([mod], "p", lazy.spawn(screenshot_exec), desc="Take screenshot"),
 
     #Launch nautilus
-    Key([mod], "f", lazy.spawn("nautilus"), desc="Launch file manager"),
+    Key([mod], "f", lazy.spawn(file_manager), desc="Launch file manager"),
 
     #Launch drun
-    Key([mod], 'space', lazy.spawn("dmenu_run")),
+    Key([mod], 'space', lazy.spawn(launcher), desc="Launch program launcher"),
 
     # Switch between windows
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
@@ -139,15 +152,16 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.CurrentLayout(),
-                widget.GroupBox(),
-                widget.Prompt(),
-                widget.WindowName(),
+                widget.CurrentLayout(font=widget_font),
+                widget.GroupBox(font=widget_font),
+                widget.Prompt(font=widget_font),
+                widget.WindowName(font=widget_font),
                 widget.Chord(
                     chords_colors={
                         'launch': ("#ff0000", "#ffffff"),
                     },
                     name_transform=lambda name: name.upper(),
+                    font=widget_font
                 ),
                 #widget.TextBox("default config", name="default"),
                 #widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
@@ -155,31 +169,31 @@ screens = [
 
 		#Right side
 
-		widget.Spacer(length=4, background='#0a8fa1'),
+		widget.Spacer(length=4, background=color2),
 
-		widget.Net(background='#0a8fa1'),
+		widget.Net(background=color2, font=widget_font),
 
-		widget.Spacer(length=4, background='#0a8fa1'),
-		widget.Spacer(length=4, background='#0e18a1'),
+		widget.Spacer(length=4, background=color2),
+		widget.Spacer(length=4, background=color1),
 
-		widget.Volume(background='#0e18a1'),
+		widget.Volume(background=color1, font=widget_font),
 
-		widget.Spacer(length=4, background='#0e18a1'),
-		widget.Spacer(length=4, background='#0a8fa1'),
+		widget.Spacer(length=4, background=color1),
+		widget.Spacer(length=4, background=color2),
 
-		widget.Battery(format='{char} {percent:2.0%}', background='#0a8fa1'),
+		widget.Battery(format='{char} {percent:2.0%}', background=color2, font=widget_font),
 
-		widget.Spacer(length=4, background='#0a8fa1'),
-		widget.Spacer(length=4, background='#0e18a1'),
+		widget.Spacer(length=4, background=color2),
+		widget.Spacer(length=4, background=color1),
 
-                widget.Clock(format='%a %I:%M %p', background='#0e18a1'),
+                widget.Clock(format='%a %I:%M %p', background=color1, font=widget_font),
 
-		widget.Spacer(length=4, background='#0e18a1'),
-		widget.Spacer(length=4, background='#f01d0a'),
+		widget.Spacer(length=4, background=color1),
+        widget.Spacer(length=4, background=color3),
 
-                widget.QuickExit(background='#f01d0a'),
+                widget.QuickExit(background=color3, font=widget_font),
 
-		widget.Spacer(length=4, background='#f01d0a'),
+		widget.Spacer(length=4, background=color3),
 
             ],
             18,
