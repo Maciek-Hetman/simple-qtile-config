@@ -15,7 +15,7 @@ then
 fi
 
 echo "Installing dependencies"
-sudo pacman -S python python-pip qtile dmenu alacritty nautilus alsa-utils gnome-screenshot xorg xorg-server nitrogen
+sudo pacman -S python python-pip qtile dmenu alacritty thunar alsa-utils gnome-screenshot xorg xorg-server nitrogen
 
 echo "Installing psutil"
 sudo pip install psutil
