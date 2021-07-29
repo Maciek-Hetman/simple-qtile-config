@@ -55,59 +55,59 @@ Hit <kbd>Ctrl</kbd>+<kbd>Win</kbd>+<kbd>R</kbd> to restart qtile
 Done
 
 ### Install config and dependencies ###
-Open terminal
-Clone this repo
+Open terminal  
+Clone this repo  
 ```console
 ~$ git clone https://github.com/Maciek-Hetman/simple-qtile-config.git
 ~$ ./simple-qtile-config/scripts/fresh_install.sh
 ```
-Enter qtile
-Hit <kbd>Win</kbd>+<kbd>Enter</kbd> to open terminal
+Enter qtile  
+Hit <kbd>Win</kbd>+<kbd>Enter</kbd> to open terminal  
 ```console
 ~$ ./simple-qtile-config/scripts/first_boot.sh
 ```
-Pick wallpaper in nitrogen
-Choose zoomed fill option and apply
-Hit <kbd>Win</kbd>+<kbd>W</kbd> to quit nitrogen
-Hit <kbd>Ctrl</kbd>+<kbd>Win</kbd>+<kbd>R</kbd> to restart qtile
-Done
+Pick wallpaper in nitrogen  
+Choose zoomed fill option and apply  
+Hit <kbd>Win</kbd>+<kbd>W</kbd> to quit nitrogen  
+Hit <kbd>Ctrl</kbd>+<kbd>Win</kbd>+<kbd>R</kbd> to restart qtile  
+Done  
 
 ### Install config, dependencies and display manager ###
-Clone this repo
+Clone this repo  
 ```console
 ~$ git clone https://github.com/Maciek-Hetman/simple-qtile-config.git
 ~$ ./simple-qtile-config/scripts/fresh_install.sh [display manager]
 ~$ reboot
 ```
-Note: Now there is only gdm and lightdm support, lightdm didn't work for me in vm
-Choose qtile in display manager and log in
+Note: Now there is only gdm and lightdm support, lightdm didn't work for me in vm  
+Choose qtile in display manager and log in  
 Hit <kbd>Win</kbd>+<kbd>Enter</kbd> to open terminal
 ```console
 ~$ ./simple-qtile-config/scripts/first_boot.sh
 ```
-Pick wallpaper in nitrogen
-Choose zoomed fill option and apply
-Hit <kbd>Win</kbd>+<kbd>W</kbd> to quit nitrogen
-Hit <kbd>Ctrl</kbd>+<kbd>Win</kbd>+<kbd>R</kbd> to restart qtile
-Done
+Pick wallpaper in nitrogen  
+Choose zoomed fill option and apply  
+Hit <kbd>Win</kbd>+<kbd>W</kbd> to quit nitrogen  
+Hit <kbd>Ctrl</kbd>+<kbd>Win</kbd>+<kbd>R</kbd> to restart qtile  
+Done  
 
 ### Install config, dependencies, display managers, and some programs ###
-Programs now include: firefox, yay, atom, unzip, geany, networkmanager, neofetch, fish and base-devel
+Programs now include: firefox, yay, atom, unzip, geany, networkmanager, neofetch, fish and base-devel  
 
-Clone this repo
+Clone this repo  
 ```console
 ~$ git clone https://github.com/Maciek-Hetman/simple-qtile-config.git
 ~$ ./simple-qtile-config/scripts/full_fresh_install.sh [display manager]
 ~$ reboot
 ```
-Note: Now there is only gdm and lightdm support, lightdm didn't work for me in vm
-Choose qtile in display manager and log in
-Hit <kbd>Win</kbd>+<kbd>Enter</kbd> to open terminal
+Note: Now there is only gdm and lightdm support, lightdm didn't work for me in vm  
+Choose qtile in display manager and log in  
+Hit <kbd>Win</kbd>+<kbd>Enter</kbd> to open terminal  
 ```console
 ~$ ./simple-qtile-config/scripts/first_boot.sh
 ```
-Pick wallpaper in nitrogen
-Choose zoomed fill option and apply
-Hit <kbd>Win</kbd>+<kbd>W</kbd> to quit nitrogen
-Hit <kbd>Ctrl</kbd>+<kbd>Win</kbd>+<kbd>R</kbd> to restart qtile
+Pick wallpaper in nitrogen  
+Choose zoomed fill option and apply  
+Hit <kbd>Win</kbd>+<kbd>W</kbd> to quit nitrogen  
+Hit <kbd>Ctrl</kbd>+<kbd>Win</kbd>+<kbd>R</kbd> to restart qtile  
 Done
