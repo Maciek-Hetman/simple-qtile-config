@@ -17,16 +17,6 @@ fi
 echo "Installing dependencies"
 sudo pacman -S python python-pip qtile dmenu alacritty nautilus alsa-utils gnome-screenshot xorg xorg-server nitrogen
 
-echo "Placing config files"
-cd ..
-rm -rf ~/.config/qtile/
-mkdir ~/.config/qtile/
-cp config.py ~/.config/qtile/
-cp autostart.sh ~/.config/qtile
-
-echo "Setting wallpaper"
-nitrogen scripts/john-towner-JgOeRuGD_Y4-unsplash.jpg
-
 echo "Installing psutil"
 pip install psutil
 
