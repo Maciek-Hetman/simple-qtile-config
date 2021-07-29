@@ -2,8 +2,8 @@
 
 echo "Placing config files"
 rm -rf ~/.config/qtile/*
-cp ~/simple-qtile-config/config.py
-cp ~/simple-qtile-config/autostart.sh
+cp ~/simple-qtile-config/config.py ~/.config/qtile/config.py
+cp ~/simple-qtile-config/autostart.sh ~/.config/qtile/autostart.sh
 
 echo "Placing wallpapers"
 mkdir ~/Wallpapers

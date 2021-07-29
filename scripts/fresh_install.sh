@@ -18,7 +18,7 @@ echo "Installing dependencies"
 sudo pacman -S python python-pip qtile dmenu alacritty nautilus alsa-utils gnome-screenshot xorg xorg-server nitrogen
 
 echo "Installing psutil"
-pip install psutil
+sudo pip install psutil
 
 echo "Rebooting..."
 sleep 2
