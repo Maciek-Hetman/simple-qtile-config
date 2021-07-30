@@ -22,5 +22,10 @@ rm -rf ~/.config/picom
 mkdir ~/.config/picom
 cp ~/simple-qtile-config/PicomConfig/picom.conf ~/.config/picom/picom.conf
 
+echo "Setting up alacritty"
+rm -rf ~/.config/alacritty
+mkdir ~/.config/alacritty
+cp ~/simple-qtile-config/AlacrittyConfig/alacritty.yml ~/.config/alacritty/alacritty.yml
+
 echo "Installing psutil"
 sudo pip install psutil
