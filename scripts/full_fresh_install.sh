@@ -16,7 +16,7 @@ then
 fi
 
 echo "Installing dependencies"
-sudo pacman -S python python-pip qtile dmenu alacritty thunar alsa-utils gnome-screenshot xorg xorg-server nitrogen
+sudo pacman -S python python-pip qtile dmenu alacritty thunar alsa-utils gnome-screenshot xorg xorg-server nitrogen picom
 
 echo "Installing psutil"
 pip install psutil
@@ -28,6 +28,11 @@ sudo pacman -S base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
+
+echo "Setting up picom"
+rm -rf ~/.config/picom
+mkdir ~/.config/picom
+cp ~/simple-qtile-config/PicomConfig/picom.conf ~/.config/picom/picom.conf
 
 echo "Installing remaining packages"
 sudo pacman -S atom unzip geany networkmanager neofetch fish htop firefox net-tools

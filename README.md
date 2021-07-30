@@ -31,7 +31,7 @@ You need to have installed dmenu, qtile, python, python-pip,
 alacritty (or another terminal emulator, but change it in config.py before
 launching qtile), thunar (or another file manager, you can change it in
 config.py file), alsa-utils (for volume widget, contains amixer),
-gnome-screenshot
+gnome-screenshot, picom
 Also run pip install psutil to make Net widget work.
 
 # Installation #
