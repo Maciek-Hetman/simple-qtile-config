@@ -111,3 +111,6 @@ Choose zoomed fill option and apply
 Hit <kbd>Win</kbd>+<kbd>W</kbd> to quit nitrogen  
 Hit <kbd>Ctrl</kbd>+<kbd>Win</kbd>+<kbd>R</kbd> to restart qtile  
 Done
+
+## Screenshots ##
+![Screenshot](https://raw.githubusercontent.com/Maciek-Hetman/simple-qtile-config/main/Screenshots/screenshot1.png)
