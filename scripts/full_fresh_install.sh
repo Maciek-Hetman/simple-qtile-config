@@ -27,16 +27,6 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 
-echo "Setting up picom"
-rm -rf ~/.config/picom
-mkdir ~/.config/picom
-cp ~/simple-qtile-config/PicomConfig/picom.conf ~/.config/picom/picom.conf
-
-echo "Setting up alacritty"
-rm -rf ~/.config/alacritty
-mkdir ~/.config/alacritty
-cp ~/simple-qtile-config/AlacrittyConfig/alacritty.yml ~/.config/alacritty/alacritty.yml
-
 echo "Installing remaining packages"
 sudo pacman -S atom unzip geany networkmanager neofetch fish htop firefox net-tools gwenview
 yay -S yp-tools
