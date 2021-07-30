@@ -21,8 +21,6 @@ sudo pacman -S python python-pip qtile dmenu alacritty thunar alsa-utils gnome-s
 echo "Installing psutil"
 pip install psutil
 
-echo "Installing base programs"
-
 echo "Installing yay"
 sudo pacman -S base-devel
 git clone https://aur.archlinux.org/yay.git
@@ -40,7 +38,7 @@ mkdir ~/.config/alacritty
 cp ~/simple-qtile-config/AlacrittyConfig/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 echo "Installing remaining packages"
-sudo pacman -S atom unzip geany networkmanager neofetch fish htop firefox net-tools
+sudo pacman -S atom unzip geany networkmanager neofetch fish htop firefox net-tools gwenview
 yay -S yp-tools
 
 echo "Setting fish as default shell..."

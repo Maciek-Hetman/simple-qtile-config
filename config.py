@@ -125,6 +125,7 @@ for i in groups:
 layouts = [
     layout.Columns(border_focus_stack='#d75f5f', margin=margin_size),
     layout.Max(),
+    layout.Floating(),
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
     # layout.Matrix(),
@@ -197,7 +198,7 @@ screens = [
 mouse = [
     Drag([mod], "Button1", lazy.window.set_position_floating(),
          start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(),
+    Drag([mod], "Button2", lazy.window.set_size_floating(),
          start=lazy.window.get_size()),
     Click([mod], "Button2", lazy.window.bring_to_front())
 ]

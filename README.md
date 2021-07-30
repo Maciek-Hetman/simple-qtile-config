@@ -92,7 +92,7 @@ Hit <kbd>Ctrl</kbd>+<kbd>Win</kbd>+<kbd>R</kbd> to restart qtile
 Done  
 
 ### Install config, dependencies, display managers, and some programs ###
-Programs now include: firefox, yay, atom, unzip, geany, networkmanager, neofetch, fish and base-devel  
+Programs now include: firefox, yay, atom, unzip, geany, networkmanager, neofetch, fish, gwenview and base-devel  
 
 Clone this repo  
 ```console
