@@ -43,6 +43,7 @@ terminal = "alacritty"
 file_manager = "thunar"
 screenshot_exec = "gnome-screenshot -i"
 launcher = "dmenu_run"
+browser = "firefox"
 
 #widget colors
 color1 = '#0e18a1'
@@ -52,6 +53,9 @@ color3 = '#f01d0a'      #QuickExit color
 widget_font = 'Ubuntu'
 
 keys = [
+    #Ooen internet browser
+    Key([mod], "b", lazy.spawn(browser), desc="Open internet browser")
+
     #Take screenshot
     Key([mod], "p", lazy.spawn(screenshot_exec), desc="Take screenshot"),
 
