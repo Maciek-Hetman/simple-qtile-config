@@ -24,45 +24,38 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+# Imports
 from typing import List  # noqa: F401
-
 from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 from libqtile import qtile, hook, extension
+import os, subprocess  # Autostart imports
 
-import os
-import subprocess
+# Variables, to quick change look
 
-#default mod key
-mod = "mod4"
+mod = "mod4"    # Default mod key
+terminal = "alacritty"      # Default terminial. qtile default is guess_terminal()
+file_manager = "thunar"     # Default file manager
+screenshot_exec = "gnome-screenshot -i"     # Screenshot command
+launcher = "dmenu_run"      # Apps launcher
+browser = "firefox"         # Web browser
 
-#default programs
-terminal = "alacritty"
-file_manager = "thunar"
-screenshot_exec = "gnome-screenshot -i"
-launcher = "dmenu_run"
-browser = "firefox"
+#Widget colors - hex values
+color1 = '#0e18a1'      # First widget color (now dark blue)
+color2 = '#0a8fa1'      # Second widget color (now light blue)
+color3 = '#f01d0a'      # QuickExit color
 
-#widget colors
-color1 = '#0e18a1'
-color2 = '#0a8fa1'
-color3 = '#f01d0a'      #QuickExit color
+widget_font = 'Ubuntu'      # Font used in top panel
 
-widget_font = 'Ubuntu'
+margin_size = 7     # Window margin size
 
 keys = [
-    #Ooen internet browser
-    Key([mod], "b", lazy.spawn(browser), desc="Open internet browser")
-
-    #Take screenshot
+    # My custom keybinds
+    Key([mod], "b", lazy.spawn(browser), desc="Open internet browser"),
     Key([mod], "p", lazy.spawn(screenshot_exec), desc="Take screenshot"),
-
-    #Launch nautilus
     Key([mod], "f", lazy.spawn(file_manager), desc="Launch file manager"),
-
-    #Launch drun
     Key([mod], 'space', lazy.spawn(launcher), desc="Launch program launcher"),
 
     # Switch between windows
@@ -130,9 +123,8 @@ for i in groups:
     ])
 
 layouts = [
-    layout.Columns(border_focus_stack='#d75f5f', margin=7),
+    layout.Columns(border_focus_stack='#d75f5f', margin=margin_size),
     layout.Max(),
-    # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
     # layout.Matrix(),
@@ -143,11 +135,12 @@ layouts = [
     # layout.TreeTab(),
     # layout.VerticalTile(),
     # layout.Zoomy(),
+    # Try more layouts by unleashing below layouts.
 ]
 
 widget_defaults = dict(
-    font='sans',
-    fontsize=12,
+    font=widget_font,
+    fontsize=10,
     padding=3,
 )
 extension_defaults = widget_defaults.copy()
@@ -167,40 +160,35 @@ screens = [
                     name_transform=lambda name: name.upper(),
                     font=widget_font
                 ),
-                #widget.TextBox("default config", name="default"),
-                #widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
 
+		        # Right side
+		        widget.Spacer(length=4, background=color2),
 
-		#Right side
+                widget.Net(background=color2, font=widget_font),
 
-		widget.Spacer(length=4, background=color2),
+	            widget.Spacer(length=4, background=color2),
+		        widget.Spacer(length=4, background=color1),
 
-		widget.Net(background=color2, font=widget_font),
+		        widget.Volume(background=color1, font=widget_font),
 
-		widget.Spacer(length=4, background=color2),
-		widget.Spacer(length=4, background=color1),
+		        widget.Spacer(length=4, background=color1),
+		        widget.Spacer(length=4, background=color2),
 
-		widget.Volume(background=color1, font=widget_font),
+                widget.Battery(format='{char} {percent:2.0%}', background=color2, font=widget_font),
 
-		widget.Spacer(length=4, background=color1),
-		widget.Spacer(length=4, background=color2),
-
-		widget.Battery(format='{char} {percent:2.0%}', background=color2, font=widget_font),
-
-		widget.Spacer(length=4, background=color2),
-		widget.Spacer(length=4, background=color1),
+                widget.Spacer(length=4, background=color2),
+                widget.Spacer(length=4, background=color1),
 
                 widget.Clock(format='%a %I:%M %p', background=color1, font=widget_font),
 
-		widget.Spacer(length=4, background=color1),
-        widget.Spacer(length=4, background=color3),
+                widget.Spacer(length=4, background=color1),
+                widget.Spacer(length=4, background=color3),
 
                 widget.QuickExit(background=color3, font=widget_font),
 
-		widget.Spacer(length=4, background=color3),
-
+                widget.Spacer(length=4, background=color3),
             ],
-            18,
+            16,     # Panel height
         ),
     ),
 ]
@@ -247,6 +235,7 @@ auto_minimize = True
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
 
+# Autostart hook
 @hook.subscribe.startup_once
 def autostart():
    	home = os.path.expanduser('~/.config/qtile/autostart.sh')
