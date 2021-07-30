@@ -43,9 +43,9 @@ launcher = "dmenu_run"      # Apps launcher
 browser = "firefox"         # Web browser
 
 #Widget colors - hex values
-color1 = '#0e18a1'      # First widget color (now dark blue)
-color2 = '#0a8fa1'      # Second widget color (now light blue)
-color3 = '#f01d0a'      # QuickExit color
+color1 = '#1a237e'      # First widget color (now dark blue)
+color2 = '#304ffe'      # Second widget color (now light blue)
+color3 = '#c62828'      # QuickExit color
 
 widget_font = 'Ubuntu'      # Font used in top panel
 
