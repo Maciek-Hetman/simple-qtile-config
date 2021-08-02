@@ -34,22 +34,21 @@ from libqtile import qtile, hook, extension
 import os, subprocess  # Autostart imports
 
 # Variables, to quick change look
-
-mod = "mod4"    # Default mod key
-terminal = "alacritty"      # Default terminial. qtile default is guess_terminal()
-file_manager = "thunar"     # Default file manager
+mod = "mod4"                                # Default mod key
+terminal = "alacritty"                      # Default terminial. qtile default is guess_terminal()
+file_manager = "thunar"                     # Default file manager
 screenshot_exec = "gnome-screenshot -i"     # Screenshot command
-launcher = "dmenu_run"      # Apps launcher
-browser = "firefox"         # Web browser
+launcher = "dmenu_run"                      # Apps launcher
+browser = "firefox"                         # Web browser
 
 #Widget colors - hex values
-color1 = '#1a237e'      # First widget color (now dark blue)
-color2 = '#304ffe'      # Second widget color (now light blue)
-color3 = '#c62828'      # QuickExit color
+color1 = '#1a237e'                          # First widget color (now dark blue)
+color2 = '#304ffe'                          # Second widget color (now light blue)
+color3 = '#c62828'                          # QuickExit color
 
-widget_font = 'Ubuntu'      # Font used in top panel
+widget_font = 'Ubuntu'                      # Font used in top panel
 
-margin_size = 7     # Window margin size
+margin_size = 7                             # Window margin size
 
 keys = [
     # My custom keybinds
@@ -116,33 +115,28 @@ for i in groups:
         # mod1 + shift + letter of group = switch to & move focused window to group
         Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True),
             desc="Switch to & move focused window to group {}".format(i.name)),
-        # Or, use below if you prefer not to switch to that group.
-        # # mod1 + shift + letter of group = move focused window to group
-        # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-        #     desc="move focused window to group {}".format(i.name)),
     ])
 
 layouts = [
     layout.Columns(border_focus_stack='#d75f5f', margin=margin_size),
     layout.Max(),
     layout.Floating(),
-    # layout.Stack(num_stacks=2),
+    layout.MonadTall(),
+    layout.Tile(),
     # layout.Bsp(),
+    # layout.Stack(num_stacks=2),
     # layout.Matrix(),
-    # layout.MonadTall(),
     # layout.MonadWide(),
     # layout.RatioTile(),
-    # layout.Tile(),
     # layout.TreeTab(),
     # layout.VerticalTile(),
     # layout.Zoomy(),
-    # Try more layouts by unleashing below layouts.
 ]
 
 widget_defaults = dict(
     font=widget_font,
-    fontsize=10,
-    padding=3,
+    fontsize=9,
+    padding=2,
 )
 extension_defaults = widget_defaults.copy()
 
@@ -185,11 +179,12 @@ screens = [
                 widget.Spacer(length=4, background=color1),
                 widget.Spacer(length=4, background=color3),
 
-                widget.QuickExit(background=color3, font=widget_font),
+                widget.QuickExit(background=color3, font=widget_font, countdown_start=3,
+                    default_text='shutdown'),
 
                 widget.Spacer(length=4, background=color3),
             ],
-            16,     # Panel height
+            13,     # Panel height
         ),
     ),
 ]
